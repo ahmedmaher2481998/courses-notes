@@ -22,3 +22,11 @@ reference is pro git offline book is available on git website
 	3 . un-tracker files is files not verisioned by git we track it by by git add file 
 	4 . when we track file we regiter it in the index area we generate a sha for it and git init a blob object for it but we will onlu take the snap shot when commiting it  
 	5 . file states : untracked U, tracked - modified M (we made changes in the wt but not comitted it to the repo),unmodified repo and wt has the same version of this file has no symbole  
+- we start by configure name and email 
+git config --global user.name "name" , user.email "email" gloable mean by user if you want it to be realy global we use --system 
+- we init a git repo using git init this adds .git folder to the wt (working directory)
+-  git ls-files listall staging files,to see all files in repo find .git/objects/ -type f to find all files in repo 
+- 1 git add filename | src/  .ts | . | filenamestart* (staging) A added to index 
+- 2  add .gitignore , git commit -m "comiit message" , to remove from staging git rm --cahced filename 
+- 3 git cat-file -t (index sha) return the type of the file  if we added option -s we get the size and -p for content,git commit -m 'msg' we add a message to notify us what this version represents timeline description
+- 4 git status,the repo has objects for blob treemhow to know that the tree object and blob objects related the the same patch ,git solved this by creating commit object that descripe the content of each patch and by whom and when and who to reach the current version,commit is a snapshot|bookmakr|patch or other names ,the commit points to that tree that points the files of this patch we stopped at v7 start:00.00
